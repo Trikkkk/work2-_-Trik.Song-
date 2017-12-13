@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trik.dao.UserMapper">
+
+
+
+    <resultMap id="UserResultMap" type="com.trik.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="attempt" property="attempt" jdbcType="INTEGER"/>
+        <result column="time" property="time" jdbcType="DATE"/>
+    </resultMap>
+
+
+
+    <select id="findByUsername" resultMap="UserResultMap">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+
+    <select id="getAll" resultMap="UserResultMap">
+        SELECT  * FROM user
+    </select>
+
+    <insert id="insert" parameterType="com.trik.entity.User" >
+        INSERT INTO
+        user
+        (id,username,password,attempt,time)
+        VALUES
+        (#{id},#{username}, #{password}, #{attempt},#{time})
+    </insert>
+
+    <update id="update" parameterType="com.trik.entity.User">
+        UPDATE
+        user
+        SET
+        id = #{id}
+        username = #{username}
+        password = #{password}
+        attempt = #{attempt}
+        time = #{time}
+
+
+    </update>
+</mapper>
+
+
+
+

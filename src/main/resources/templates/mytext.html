@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+    <tr th:each="text: ${texts}">
+        <th th:text="${text.id}"></th>
+        <td th:text="${text.title}"></td>
+
+        <div>
+        <td th:text="${text.content}"></td>
+        </div>
+        </tr>
+
+</div>
+
+<div>
+    <textarea id="comment" name="comment"></textarea><input id="put" type="button" value="评论" />
+</div>
+
+
+
+</body>
+</html>

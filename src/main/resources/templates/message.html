@@ -1,0 +1,34 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修改信息</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body >
+<div >
+    <form th:action="@{/edit}" th:object="${texts}"  method="post">
+        <input type="hidden" name="id" th:value="*{id}" />
+        <input type="hidden" name="title" th:value="*{title}" />
+        <input type="hidden" name="author" th:value="*{author}"/>
+        <input type="hidden" name="publishtime" th:value="*{publishtime}"/>
+        <input type="hidden" name="comment_num" th:value="*{comment_num}"/>
+        <input type="hidden" name="lastpublishtime" th:value="*{lastpublishtime}"/>
+
+        <div class="form-group">
+            <label for="msg" class="col-sm-2 control-label">消息编辑</label>
+            <div >
+                <input type="text" class="form-control" name="message"  id="msg" th:value="*{content}" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="编辑" class="btn btn-info" />
+                <a href=" " th:href="@{/showmessage.html}" class="btn btn-info">返回</a>
+        </div>
+        </div>
+</form>
+</div>
+</body>
+</html>

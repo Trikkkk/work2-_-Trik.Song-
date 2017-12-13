@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trik.dao.TextMapper">
+
+
+
+    <resultMap id="UserResultMap" type="com.trik.entity.Text">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="author" property="author" jdbcType="VARCHAR" />
+        <result column="publishtime" property="publishtime" jdbcType="DATE"/>
+        <result column="comment_num" property="comment_num" jdbcType="INTEGER"/>
+        <result column="lastpublishtime" property="lastpublishtime" jdbcType="DATE"/>
+        <result column="content" property="content" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+
+
+    <select id="getAll" resultMap="UserResultMap">
+        SELECT  * FROM text ORDER BY  lastpublishtime DESC
+    </select>
+
+    <select id="findTextById" resultMap="UserResultMap">
+         SELECT * FROM text WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.trik.entity.Text">
+        UPDATE
+        text
+        SET
+        content = #{content}
+        WHERE
+        id = #{id}
+
+        </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM text WHERE id = #{id}
+    </delete>
+
+
+</mapper>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div >
+    用户信息：<div th:text="${session.username}"></div>
+    <a th:href="@{/showmessage.html}" class="btn btn-info">查看文章</a>
+</div>
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>标题</th>
+        <th>作者</th>
+        <th>发表时间</th>
+        <th>评论数</th>
+        <th>最后评论时间</th>
+    </tr>
+    </thead>
+    <tbody>
+
+   <div>
+    <tr th:each="text: ${texts}">
+        <th scope="row" th:text="${text.id}"></th>
+        <td th:text="${text.title}"></td>
+        <td th:text="${text.author}"></td>
+        <td th:text="${text.publishtime}"></td>
+        <td th:text="${text.comment_num}"></td>
+        <td th:text="${text.lastpublishtime}"></td>
+        <td><a th:href="@{/send(id=${text.id})}">查看详情</a> </td>
+
+    </tr>
+   </div>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
