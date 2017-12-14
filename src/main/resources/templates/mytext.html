@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div>
+<div class="panel panel-default">
 
     <tr th:each="text: ${texts}">
         <th th:text="${text.id}"></th>
@@ -18,11 +21,30 @@
 
 </div>
 
-<div>
-    <textarea id="comment" name="comment"></textarea><input id="put" type="button" value="评论" />
+
+<h5>评论区</h5>
+<div class="panel-body">
+
+
+    <tr th:each="comment: ${comments}">
+       <div>
+        评论： <td th:text="${comment.comment}"></td>
+
+       </div>
+
+        <div>
+            作者： <td th:text="${comment.username}"></td>
+       </div>
+
+    </tr>
 </div>
 
+<form th:action="makecomment" method="post">
+<div>
+    <textarea id="comment" name="comment" ></textarea><input id="put" type="submit" value="评论" />
+</div>
 
+</form>
 
 </body>
 </html>

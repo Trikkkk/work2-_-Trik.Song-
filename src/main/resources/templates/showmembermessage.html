@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>消息</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body >
+<div >
+    <table class="table table-hover">
+
+        <div>
+            <tr  th:each="text : ${texts}">
+                <th scope="row" th:text="${text.id}">消息</th>
+                <td th:text="${text.title}"></td>
+                <td th:text="${text.content}"></td>
+                <td><a th:href="@{/send1(id=${text.id})}">编辑</a> </td>
+                <td><a th:href="@{/delete(id=${text.id})}">删除</a></td>
+                <td><a href=" " th:href="@{/insertmessage.html}" >新增</a></td>
+
+            </tr>
+        </div>
+    </table>
+</div>
+</body>
+</html>

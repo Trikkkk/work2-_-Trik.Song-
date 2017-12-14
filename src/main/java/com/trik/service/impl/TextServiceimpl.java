@@ -6,6 +6,7 @@ import com.trik.service.TextService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,8 +25,14 @@ public class TextServiceimpl implements TextService {
     public Text findTextById(Integer id){return textMapper.findTextById(id);}
 
     @Override
-    public void update(String content){textMapper.update(content);}
+    public void update(Integer id,String content){textMapper.update(id,content);}
 
     @Override
     public void delete(Integer id){textMapper.delete(id);}
+
+    @Override
+    public List<Text> findTextByAuthor(String author){return textMapper.findTextByAuthor(author);}
+
+    @Override
+    public void insert(String title,String author,Date publishtime,String content){textMapper.insert(title,author,publishtime,content);}
 }

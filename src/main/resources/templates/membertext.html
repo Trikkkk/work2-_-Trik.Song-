@@ -9,8 +9,8 @@
 </head>
 <body>
 <div >
-    您好，管理员：<div th:text="${session.username}"></div>
-    <a th:href="@{/showmessage.html}" class="btn btn-info">查看所有文章</a>
+    您好，普通会员：<div th:text="${session.username}"></div>
+    <a th:href="@{/send2(author=${session.username})}" class="btn btn-info">查看我的文章</a>
 </div>
 
 
@@ -28,18 +28,18 @@
     </thead>
     <tbody>
 
-   <div>
-    <tr th:each="text: ${texts}">
-        <th scope="row" th:text="${text.id}"></th>
-        <td th:text="${text.title}"></td>
-        <td th:text="${text.author}"></td>
-        <td th:text="${text.publishtime}"></td>
-        <td th:text="${text.comment_num}"></td>
-        <td th:text="${text.lastpublishtime}"></td>
-        <td><a th:href="@{/send(id=${text.id})}">查看详情</a> </td>
+    <div>
+        <tr th:each="text: ${texts}">
+            <th scope="row" th:text="${text.id}"></th>
+            <td th:text="${text.title}"></td>
+            <td th:text="${text.author}"></td>
+            <td th:text="${text.publishtime}"></td>
+            <td th:text="${text.comment_num}"></td>
+            <td th:text="${text.lastpublishtime}"></td>
+            <td><a th:href="@{/send(id=${text.id})}">查看详情</a> </td>
 
-    </tr>
-   </div>
+        </tr>
+    </div>
     </tbody>
 </table>
 

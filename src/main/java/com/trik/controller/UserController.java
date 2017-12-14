@@ -51,6 +51,7 @@ public class UserController {
             User userEntity = new User();
             userEntity.setUsername(username);
             userEntity.setPassword(password);
+            userEntity.setAttempt(0);
             userMapper.insert(userEntity);
             return "login";
         } else {
@@ -65,6 +66,7 @@ public class UserController {
         String password = request.getParameter("password");
         request.getSession().setAttribute("username",username);
         User usernameEntity = userMapper.findByUsername(username);
+        int attempt = usernameEntity.getAttempt();
         String str = "";
         String password1 = "";
 
@@ -73,7 +75,14 @@ public class UserController {
             password1 = usernameEntity.getPassword();;
             //判断密码是否对应
             if (password1.equals(password)) {
-                str = "redirect:/text";
+                if(attempt==1){
+                    str="redirect:/text";
+                    request.getSession().setAttribute("attempt",attempt);
+                }else
+                {
+                    request.getSession().setAttribute("attempt",attempt);
+                    str = "redirect:/membertext";
+                }
 
             }
         } else {

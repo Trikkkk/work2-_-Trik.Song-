@@ -41,5 +41,16 @@
         DELETE FROM text WHERE id = #{id}
     </delete>
 
+    <select id="findTextByAuthor" resultMap="UserResultMap">
+          SELECT * FROM text WHERE author = #{author}
+    </select>
+
+    <insert id="insert" parameterType="com.trik.entity.Text">
+           INSERT INTO
+        text
+        (title,author,publishtime,content)
+        VALUES
+        (#{title},#{author}, #{publishtime}, #{content})
+    </insert>
 
 </mapper>

@@ -2,8 +2,10 @@ package com.trik.dao;
 
 import com.trik.entity.Text;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,6 +17,8 @@ import java.util.List;
 public interface TextMapper {
     List<Text> getAll();
     Text findTextById(int id);
-    void update(String content);
+    void update(@Param("id")Integer id, @Param("content") String content);
     void delete(int id);
+    List<Text> findTextByAuthor(String author);
+    void insert(@Param("title")String title,@Param("author")String author, @Param("publishtime")Date publishtime, @Param("content") String content);
 }

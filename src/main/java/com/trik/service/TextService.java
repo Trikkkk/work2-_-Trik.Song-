@@ -1,7 +1,9 @@
 package com.trik.service;
 
 import com.trik.entity.Text;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,7 +14,11 @@ public interface TextService {
 
     Text findTextById(Integer id);
 
-    public void update (String content);
+    public  void update(Integer id,String content);
 
     public void delete(Integer id);
+
+    public List<Text> findTextByAuthor(String author);
+
+    void insert(String title,String author, Date publishtime, String content);
 }

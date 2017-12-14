@@ -1,25 +1,21 @@
 package com.trik.entity;
 
 /**
- * Created by Trik.Song on 2017/12/13.
+ * Created by Trik.Song on 2017/12/14.
  */
 public class Comment {
+    private Integer id;
     private Integer commentid;
-    private Integer texitid;
     private String comment;
     private String username;
 
-    public Integer getCommentid() {
-        return commentid;
-    }
+    public Integer getId(){return id;}
 
-    public void setCommentid(Integer commentid) {
-        this.commentid = commentid;
-    }
+    public void setId(Integer id){this.id = id;}
 
-    public Integer getTexitid(){return texitid;}
+   public Integer getCommentid(){return commentid;}
 
-    public void setTexitid(Integer texitid){this.texitid = texitid;}
+    public void setCommentid(Integer commentid){this.commentid = commentid;}
 
     public String getComment(){return comment;}
 
@@ -28,5 +24,4 @@ public class Comment {
     public String getUsername(){return username;}
 
     public void setUsername(String username){this.username = username;}
-
 }
