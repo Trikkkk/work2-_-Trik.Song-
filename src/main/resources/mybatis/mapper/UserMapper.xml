@@ -36,11 +36,9 @@
         UPDATE
         user
         SET
-        id = #{id}
+        attempt= #{attempt}
+        WHERE
         username = #{username}
-        password = #{password}
-        attempt = #{attempt}
-        time = #{time}
 
 
     </update>

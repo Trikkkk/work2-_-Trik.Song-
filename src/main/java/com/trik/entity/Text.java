@@ -6,13 +6,13 @@ import java.util.Date;
  * Created by Trik.Song on 2017/12/12.
  */
 public class Text {
-    private Integer id;
-    private String title;
-    private String author;
-    private Date publishtime;
-    private Integer comment_num;
-    private Date lastpublishtime;
-    private String content;
+    private Integer id;          //文章的主键id
+    private String title;        //文章的标题
+    private String author;       //文章的作者
+    private Date publishtime;    //文章的发表时间
+    private Integer comment_num; //评论数
+    private Date lastpublishtime;//最后一次评论时间
+    private String content;      //评论内容
 
     public Integer getId() {
         return id;

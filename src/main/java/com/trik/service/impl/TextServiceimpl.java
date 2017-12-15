@@ -35,4 +35,7 @@ public class TextServiceimpl implements TextService {
 
     @Override
     public void insert(String title,String author,Date publishtime,String content){textMapper.insert(title,author,publishtime,content);}
+
+    @Override
+    public void update1(Integer id,Integer comment_num,Date lastpublishtime){textMapper.update1(id,comment_num,lastpublishtime);}
 }

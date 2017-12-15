@@ -21,19 +21,22 @@ public class UserController {
     @Autowired
     private UserService userMapper;
 
-    @RequestMapping("/getUsers")
-    public List<User> getUsers() {
-        List<User> users = userMapper.getAll();
-        return users;
-    }
 
-    //注册页面
+    /**
+     *
+     *注册页面
+     *
+     */
     @RequestMapping("/register")
     public String register() {
         return "register";
     }
 
-    //登录页面
+    /**
+     *
+     *登陆页面
+     *
+     */
     @RequestMapping("/login")
     public String login() {
         return "login";
@@ -41,7 +44,11 @@ public class UserController {
 
 
 
-    //注册方法
+    /**
+     *
+     *注册方法
+     *
+     */
     @RequestMapping("/addregister")
     public String register(HttpServletRequest request) {
         String username = request.getParameter("username");
@@ -59,7 +66,11 @@ public class UserController {
         }
     }
 
-    //登录方法
+    /**
+     *
+     *登陆方法
+     *
+     */
     @RequestMapping("/login1")
     public String login(HttpServletRequest request) {
         String username = request.getParameter("username");
@@ -81,7 +92,7 @@ public class UserController {
                 }else
                 {
                     request.getSession().setAttribute("attempt",attempt);
-                    str = "redirect:/membertext";
+                    str = "redirect:/memberText";
                 }
 
             }

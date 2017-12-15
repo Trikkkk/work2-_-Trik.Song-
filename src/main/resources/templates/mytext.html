@@ -33,13 +33,13 @@
        </div>
 
         <div>
-            作者： <td th:text="${comment.username}"></td>
+            评论人： <td th:text="${comment.username}"></td>
        </div>
 
     </tr>
 </div>
 
-<form th:action="makecomment" method="post">
+<form th:action="MakeComment" method="post">
 <div>
     <textarea id="comment" name="comment" ></textarea><input id="put" type="submit" value="评论" />
 </div>

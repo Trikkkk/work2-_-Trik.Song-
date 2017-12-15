@@ -8,27 +8,25 @@
 </head>
 <body >
 <div >
-    <form th:action="@{/edit}" th:object="${texts}"  method="post">
+    <form th:action="@{/edit_Role}" th:object="${roles}"  method="post">
         <input type="hidden" name="id" th:value="*{id}" />
-        <input type="hidden" name="title" th:value="*{title}" />
-        <input type="hidden" name="author" th:value="*{author}"/>
-        <input type="hidden" name="publishtime" th:value="*{publishtime}"/>
-        <input type="hidden" name="comment_num" th:value="*{comment_num}"/>
-        <input type="hidden" name="lastpublishtime" th:value="*{lastpublishtime}"/>
+        <input type="hidden" name="name" th:value="*{name}" />
+        <input type="hidden" name="job" th:value="*{job}" />
+
 
         <div class="form-group">
-            <label for="msg" class="col-sm-2 control-label">消息编辑</label>
+            <label for="msg" class="col-sm-2 control-label">权限编辑（e:edit,d(delete)）</label>
             <div >
-                <input type="text" class="form-control" name="content"  id="msg" th:value="*{content}" />
+                <input type="text" class="form-control" name="power"  id="msg" th:value="*{power}" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" value="编辑" class="btn btn-info" />
-                <a href=" " th:href="@{/showMessage.html}" class="btn btn-info">返回</a>
+                <a href=" " th:href="@{/role.html}" class="btn btn-info">返回</a>
+            </div>
         </div>
-        </div>
-</form>
+    </form>
 </div>
 </body>
 </html>

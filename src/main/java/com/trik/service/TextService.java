@@ -21,4 +21,6 @@ public interface TextService {
     public List<Text> findTextByAuthor(String author);
 
     void insert(String title,String author, Date publishtime, String content);
+
+    public void update1(Integer id,Integer comment_num,Date lastpublishtime);
 }

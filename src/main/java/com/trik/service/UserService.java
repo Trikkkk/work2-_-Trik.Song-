@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserService {
     public User findByUsername(String name);
     public List<User> getAll();
-    public void update(User user);
+    public void update(String username,Integer attempt);
     public void insert(User user);
 }

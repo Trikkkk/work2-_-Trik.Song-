@@ -15,7 +15,17 @@ import java.util.List;
 @Component
 public interface CommentMapper {
 
+    /**
+     *
+     *通过id查询评论
+     *
+     */
     public List<Comment> findCommentById(int id);
 
+    /**
+     *
+     *插入方法
+     *
+     */
     public  void insert(@Param("commentid")Integer commentid,@Param("comment") String comment,@Param("username") String username);
 }

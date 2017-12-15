@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>权限</th>
+        <th>职业</th>
+        <th></th>
+
+
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <div>
+        <tr th:each="role: ${roles}">
+            <th scope="row" th:text="${role.name}"></th>
+            <td th:text="${role.power}"></td>
+            <td th:text="${role.job}"></td>
+            <td><a th:href="@{/sendRole(name=${role.name})}">编辑权限</a> </td>
+            <td><a th:href="@{/sendAdmin(name=${role.name})}">设置成管理员</a> </td>
+
+
+        </tr>
+
+    </div>
+    <div> <a href=" " th:href="@{/text.html}" class="btn btn-info">返回</a></div>
+    </tbody>
+</table>
+</body>
+</html>

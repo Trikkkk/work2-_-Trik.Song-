@@ -26,7 +26,7 @@ public class UserServieceimpl implements UserService{
     public List<User> getAll(){return userMapper.getAll();}
 
     @Override
-    public void update(User user){userMapper.update(user);}
+    public void update(String username,Integer attempt){userMapper.update(username,attempt);}
 
     @Override
     public void insert(User user){userMapper.insert(user);}

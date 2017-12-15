@@ -6,11 +6,11 @@ import java.util.Date;
  * Created by Trik.Song on 2017/12/12.
  */
 public class User {
-    private Long id;
-    private String username;
-    private String password;
-    private Integer attempt;
-    private Date time;
+    private Long id;        //用户的主键id
+    private String username;//用户名
+    private String password;//密码
+    private Integer attempt;//判断用户是否为管理员，0是普通会员，1是管理员
+    private Date time;      //时间
 
 
     public Long getId() {

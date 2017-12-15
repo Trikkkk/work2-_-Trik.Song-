@@ -20,11 +20,12 @@
                 <td th:text="${text.content}"></td>
                 <td><a th:href="@{/send1(id=${text.id})}">编辑</a> </td>
                 <td><a th:href="@{/delete(id=${text.id})}">删除</a></td>
-                <td><a href=" " th:href="@{/insertmessage.html}" >新增</a></td>
+                <td><a href=" " th:href="@{/insertMessage.html}" >新增</a></td>
 
             </tr>
         </div>
     </table>
+    <a href=" " th:href="@{/templates/memberText.html}" class="btn btn-info">返回</a>
 </div>
 </body>
 </html>

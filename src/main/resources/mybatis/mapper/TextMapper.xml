@@ -53,4 +53,8 @@
         (#{title},#{author}, #{publishtime}, #{content})
     </insert>
 
+    <update id="update1" parameterType="com.trik.entity.Text">
+         UPDATE text SET comment_num= #{comment_num},lastpublishtime= #{lastpublishtime} WHERE id= #{id}
+    </update>
+
 </mapper>
